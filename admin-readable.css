@@ -1,0 +1,59 @@
+/* One readable type scale across the complete ZLOON admin panel */
+.admin-page,
+.admin-page button,
+.admin-page input,
+.admin-page select { font-family: Arial, sans-serif; }
+
+.shop-top-brand { font-size: 17px; }
+.shop-global-search { font-size: 14px; }
+.shop-user { font-size: 13px; }
+
+.admin-menu button,
+.admin-menu a,
+.admin-side-bottom button,
+.admin-side-bottom a { font-size: 14px; line-height: 1.3; }
+.menu-label { font-size: 10px; }
+
+.overview-tools button,
+.overview-tools span,
+.fulfil-button { font-size: 12px; }
+.kpi-row small { font-size: 12px; }
+.kpi-row strong { font-size: 22px; }
+.kpi-row em { font-size: 19px; }
+.admin-view h1 { font-size: 19px; }
+
+.ask-card strong { font-size: 13px; }
+.ask-card small { font-size: 11px; }
+.setup-copy > small { font-size: 12px; }
+.setup-copy h2,
+.discover-card h2 { font-size: 16px; }
+.setup-copy p,
+.discover-card p { font-size: 12px; }
+.setup-task,
+.setup-task button,
+.primary-action,
+.outline-action { font-size: 12px; }
+.grow-grid strong { font-size: 13px; }
+
+.section-title small { font-size: 11px; }
+.section-title h2 { font-size: 24px; }
+.stock-pill { font-size: 12px; }
+.admin-card table { font-size: 13px; }
+.admin-card th { font-size: 12px; }
+.admin-card small,
+.small,
+.activity > div { font-size: 12px; }
+.inventory-form input,
+.inventory-form select,
+.form-grid input,
+.inventory-form button,
+.form-grid button { font-size: 13px; }
+.settings-card p { font-size: 13px; line-height: 1.6; }
+
+@media (max-width: 760px) {
+  .admin-menu button,
+  .admin-menu a,
+  .admin-side-bottom button,
+  .admin-side-bottom a { font-size: 14px; }
+  .kpi-row strong { font-size: 20px; }
+}

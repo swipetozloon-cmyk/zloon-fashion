@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Careers at ZLOON</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="career.css"><link rel="stylesheet" href="career-logo.css">
+</head><body>
+  <nav class="nav"><a class="brand" href="index.html"><img src="assets/zloon-logo.jpg" alt="ZLOON logo"></a><div class="links"><a href="index.html#new">New In</a><a href="index.html#men">Men</a><a href="index.html#women">Women</a><a class="active-link" href="career.html">Career</a><a href="index.html#about">About ZLOON</a></div><div class="actions"><a class="career-back" href="index.html">Back to store</a></div></nav>
+  <main class="career-page">
+    <section class="career-hero"><div><p class="career-kicker">CAREERS AT ZLOON</p><h1>Build the next wave<br>of fashion with us.</h1><p>We are creating accessible, stylish and community-first fashion for Gen Z. Bring your energy, ideas and eye for what is next.</p></div><div class="career-shape"><img src="assets/zloon-logo.jpg" alt="ZLOON"><small>JOIN THE VIBE</small></div></section>
+    <section class="career-grid"><aside class="career-info"><p class="career-kicker">JOIN ZLOON</p><h2>Make your move.</h2><p>Apply for a full-time role, part-time role or internship. Every application is reviewed by the ZLOON team.</p><div class="career-benefits"><div><b>01</b><span><strong>Fashion first</strong><small>Work around fresh ideas and trend-led style.</small></span></div><div><b>02</b><span><strong>Grow together</strong><small>Learn new skills with a young, creative team.</small></span></div><div><b>03</b><span><strong>Internships</strong><small>Start your fashion career with real projects.</small></span></div></div></aside>
+      <section class="career-form-card"><div class="form-heading"><p class="career-kicker">APPLICATION FORM</p><h2>Tell us about yourself</h2><p>Fields marked * are required. For your resume, add a Google Drive link or send it on WhatsApp after submitting.</p></div>
+        <form id="careerForm" class="career-form">
+          <label>Full name *<input name="name" required placeholder="Your full name"></label>
+          <label>Email address *<input name="email" type="email" required placeholder="you@email.com"></label>
+          <label>WhatsApp number *<input name="phone" inputmode="tel" required placeholder="+91 98765 43210"></label>
+          <label>Current city *<input name="city" required placeholder="Your city"></label>
+          <label>Applying for *<select name="type" required><option value="">Select option</option><option>Full-time role</option><option>Part-time role</option><option>Internship</option></select></label>
+          <label>Role you are interested in *<select name="role" required><option value="">Select role</option><option>Fashion styling</option><option>Store operations</option><option>Social media & content</option><option>Sales & customer experience</option><option>Photography / videography</option><option>Design internship</option><option>Other</option></select></label>
+          <label>Education / course<input name="education" placeholder="College, course or qualification"></label>
+          <label>Experience level<select name="experience"><option>Fresher</option><option>0–1 year</option><option>1–3 years</option><option>3+ years</option></select></label>
+          <label class="wide">Portfolio or resume link<input name="portfolio" type="url" placeholder="Google Drive / portfolio URL (optional)"></label>
+          <label class="wide">Why would you like to join ZLOON? *<textarea name="message" required placeholder="Tell us briefly about yourself, your skills and why you want to join."></textarea></label>
+          <div class="wide submit-row"><button type="submit">Submit application</button><p id="careerStatus" aria-live="polite"></p></div>
+        </form>
+      </section>
+    </section>
+  </main>
+  <footer class="footer"></footer>
+  <script src="footer-loader.js"></script><script src="career.js?v=20260832"></script>
+</body></html>

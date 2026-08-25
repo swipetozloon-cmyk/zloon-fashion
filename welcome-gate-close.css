@@ -1,0 +1,3 @@
+.welcome-gate-card { position: relative; }
+.gate-close { position:absolute; top:12px; right:15px; border:0; background:transparent; color:#526783; font-size:28px; line-height:1; font-weight:300; z-index:2; }
+.gate-close:hover { color:#09275d; }

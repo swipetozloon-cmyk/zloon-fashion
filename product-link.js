@@ -1,0 +1,1 @@
+window.zloonOpenLook=function(item){const price=item.price||`₹${[699,799,899,999][item.name.length%4]}`;const params=new URLSearchParams({name:item.name,image:item.url,price});location.href=`product.html?${params.toString()}`};

@@ -1,0 +1,26 @@
+/* Clearer ZLOON admin navigation */
+.admin-menu button,
+.admin-menu a,
+.admin-side-bottom button,
+.admin-side-bottom a {
+  font-size: 14px;
+  font-weight: 650;
+  padding: 9px 10px;
+  gap: 10px;
+  border-radius: 6px;
+}
+
+.admin-menu button.active {
+  color: #0b3478;
+  font-weight: 800;
+}
+
+.admin-menu b { font-size: 11px; padding: 2px 6px; }
+.menu-label { font-size: 10px; padding: 17px 10px 6px; }
+
+@media (max-width: 760px) {
+  .admin-menu button,
+  .admin-menu a,
+  .admin-side-bottom button,
+  .admin-side-bottom a { padding: 9px 4px; }
+}

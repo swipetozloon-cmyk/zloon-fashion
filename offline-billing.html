@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ZLOON Offline Billing</title>
+<link rel="stylesheet" href="zloon-typography.css"><link rel="stylesheet" href="offline-billing.css">
+</head><body>
+<header class="pos-top"><a href="admin.html">← Admin dashboard</a><strong>ZLOON <small>OFFLINE BILLING</small></strong><span>POS · Store counter</span></header>
+<main class="pos-shell">
+  <section class="pos-heading"><div><p>POINT OF SALE</p><h1>Create an offline sale</h1><span>Customer ko invoice WhatsApp ya SMS compose karke bhejein.</span></div><a class="admin-link" href="admin.html">Open CRM</a></section>
+  <section id="posAccess" class="pos-access" hidden><h2>Admin sign-in required</h2><p>Pehle Admin dashboard par sign in karein. Is device par login 30 days tak remembered rahega.</p><a href="admin.html">Go to Admin Sign In</a></section>
+  <form id="posForm" class="pos-grid">
+    <section class="pos-card"><h2>Customer details</h2><div class="field-grid"><label>Full name<input name="name" required placeholder="Customer name"></label><label>WhatsApp / mobile number<input name="phone" required inputmode="tel" placeholder="91XXXXXXXXXX"></label><label>Email (optional)<input name="email" type="email" placeholder="Email address"></label><label>City<input name="city" required placeholder="City"></label></div><label>Bill note (optional)<textarea name="note" placeholder="Thank you note or store note"></textarea></label></section>
+    <section class="pos-card"><div class="card-title"><h2>Items in bill</h2><button type="button" class="text-btn" id="addItem">+ Add item</button></div><div id="billItems"></div><div class="billing-totals"><label>Discount ₹<input id="discount" name="discount" type="number" min="0" value="0"></label><label>Payment mode<select name="paymentMethod"><option value="cash">Cash</option><option value="upi">UPI</option><option value="card">Card</option></select></label><strong>Total <span id="billTotal">₹0</span></strong></div><button class="create-bill" type="submit">Create bill &amp; save sale</button><p id="posStatus" class="status"></p></section>
+  </form>
+  <section id="invoice" class="invoice" hidden><div class="invoice-head"><div><p>ZLOON · BRING YOUR FIT. OWN THE VIBE.</p><h2>Sale invoice</h2></div><strong id="invoiceId"></strong></div><div id="invoiceBody"></div><div class="invoice-actions"><button id="printInvoice" type="button">Print invoice</button><a id="sendWhatsapp" target="_blank" rel="noopener">WhatsApp bill</a><a id="sendSms">SMS bill</a><button id="newBill" type="button">New bill</button></div><p class="send-note">WhatsApp/SMS button customer ke number ke saath ready message kholega. Send button aap WhatsApp/SMS app mein press karenge.</p></section>
+</main><script src="offline-billing.js?v=20260837"></script></body></html>

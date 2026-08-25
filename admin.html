@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ZLOON Admin</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="admin-shopify.css?v=20260825"><link rel="stylesheet" href="admin-tweaks.css?v=20260825"><link rel="stylesheet" href="admin-readable.css?v=20260826"><link rel="stylesheet" href="admin-login.css?v=20260830">
+</head><body class="admin-page">
+<div class="zloon-admin"><header class="shop-top"><a href="index.html" class="shop-top-brand">ZLOON <small>ADMIN</small></a><input class="shop-global-search" id="adminSearch" placeholder="Search orders, customers or stock"><button class="admin-signin-open admin-login-trigger" type="button">Admin Sign In</button><div class="shop-user">● ZLOON Owner</div></header>
+<div class="admin-shell"><aside class="admin-sidebar">
+  <a class="mini-brand" href="index.html"><img src="assets/zloon-logo.jpg" alt="ZLOON"></a>
+  <nav class="admin-menu">
+    <button class="active" data-admin-target="dashboard">⌂ <span>Home</span></button>
+    <button data-admin-target="orders">▣ <span>Orders</span><b id="orderBadge">0</b></button>
+    <button data-admin-target="products">◆ <span>Products</span></button>
+    <button data-admin-target="customers">♙ <span>Customers</span></button>
+    <button data-admin-target="careers">✦ <span>Career Applications</span><b id="careerBadge">0</b></button>
+    <button data-admin-target="dashboard">◉ <span>Marketing</span></button>
+    <button data-admin-target="dashboard">♧ <span>Discounts</span></button>
+    <button data-admin-target="dashboard">▤ <span>Content</span></button>
+    <button data-admin-target="dashboard">⌘ <span>Markets</span></button>
+    <button data-admin-target="dashboard">▦ <span>Finance</span></button>
+    <button data-admin-target="activity">◔ <span>Analytics</span></button>
+    <span class="menu-label">SALES CHANNELS</span>
+    <a href="index.html">▣ <span>Online Store</span></a>
+    <a href="offline-billing.html">▣ <span>Point of Sale</span></a>
+    <a href="https://www.youtube.com/channel/UCJH-c6AQpNyggQklgDJO-Ng" target="_blank" rel="noopener">◉ <span>Google &amp; YouTube</span></a>
+    <span class="menu-label">APPS</span>
+    <a href="https://www.instagram.com/zloon_spotlight?igsh=bnRnaTlmbmN6YTMz" target="_blank" rel="noopener">✦ <span>ZLOON Spotlight</span></a>
+  </nav>
+  <div class="admin-side-bottom"><button class="admin-login-trigger sidebar-login" type="button">▣ <span>Admin Login</span></button><button data-admin-target="settings">⚙ <span>Settings</span></button><a href="index.html">↗ <span>View ZLOON website</span></a><button id="adminLogout">Log out</button></div>
+</aside>
+<main class="admin-main"><div class="admin-content" id="adminApp" hidden>
+  <section class="admin-view active" id="dashboard">
+    <div class="overview-tools"><button>▣ Last 30 days</button><button>All channels⌄</button><span>Next payout: ₹0.00</span></div>
+    <section class="kpi-row"><article><small>Sessions</small><strong id="visitCount">0</strong><em>⌁</em></article><article><small>Total sales</small><strong id="totalSales">₹0</strong><em>⌁</em></article><article><small>Orders</small><strong id="orderCount">0</strong><em>⌁</em></article><article><small>Conversion rate</small><strong id="conversion">0%</strong><em>⌁</em></article></section>
+    <button class="fulfil-button" data-admin-target="customers">♙ <span id="totalCustomers">0</span> customers</button><button class="fulfil-button" data-admin-target="orders">▣ <span id="orderFulfilCount">0</span> orders to fulfil</button><button class="fulfil-button" data-admin-target="dashboard">✦ <span id="spotlightBookingCount">0</span> Spotlight registrations</button>
+    <h1>Good afternoon, let's get started.</h1>
+    <section class="ask-card"><div><strong>Ask anything...</strong><small>✦ ZLOON Store Assistant</small></div><button>＋</button></section>
+    <section class="setup-card"><div class="setup-copy"><small>○ <span id="memberCount">0</span> ZLOON Plus members</small><h2>Set up your ZLOON fashion store</h2><p>Track customers, manage fashion inventory and keep every collection ready for sale.</p><div class="setup-task"><span><strong>First task:</strong> Add your first stock item</span><button data-admin-target="products">Get started</button></div></div><div class="setup-art"><span>✦</span><b>◒</b><i>◆</i></div></section>
+    <section class="discover-card"><div class="discover-intro"><div><h2>Grow more with ZLOON</h2><p>Manage orders, stock and customer relationships from one place.</p></div><div class="brand-block">Z<br><small>FASHION</small></div></div><button class="outline-action" data-admin-target="products">Explore products</button><div class="grow-grid"><article><strong>Drive traffic</strong><p>Share your fashion catalog to bring more visitors.</p></article><article><strong>Improve conversion</strong><p>Help customers choose size, colours and delivery options.</p></article><article><strong>Increase order value</strong><p>Recommend fresh looks and ZLOON Plus membership.</p></article></div></section>
+  </section>
+  <section class="admin-view" id="orders"><div class="section-title"><div><small>ORDER MANAGEMENT</small><h2>Orders</h2></div><button class="primary-action" data-admin-target="products">Manage products</button></div><section class="admin-card table-card"><div class="table-scroll"><table><thead><tr><th>Order</th><th>Customer</th><th>Looks</th><th>Delivery</th><th>Payment</th><th>Time</th></tr></thead><tbody id="orderRows"></tbody></table></div></section></section>
+  <section class="admin-view" id="products"><div class="section-title"><div><small>PRODUCT MANAGEMENT</small><h2>Products &amp; stock</h2></div><span class="stock-pill"><span id="stockCount">0</span> units tracked</span></div><section class="admin-card"><form class="inventory-form" id="inventoryForm"><input name="name" placeholder="Product name" required><input name="sku" placeholder="SKU / item code"><input name="quantity" type="number" min="1" placeholder="Quantity" required><select name="movement"><option value="in">Stock in</option><option value="out">Stock out</option></select><input name="note" placeholder="Note (optional)"><button type="submit">Save stock update</button></form><p class="small" id="inventoryStatus"></p><div class="table-scroll"><table><thead><tr><th>Item</th><th>SKU</th><th>Available stock</th><th>Last activity</th></tr></thead><tbody id="inventoryRows"></tbody></table></div></section></section>
+  <section class="admin-view" id="customers"><div class="section-title"><div><small>CUSTOMER CRM</small><h2>Customers</h2></div><span class="stock-pill"><span id="customerCount">0</span> verified profiles</span></div><section class="admin-card table-card"><div class="table-scroll"><table><thead><tr><th>Customer</th><th>Email</th><th>WhatsApp</th><th>City</th><th>Plan</th><th>Last login</th></tr></thead><tbody id="customerRows"></tbody></table></div></section></section>
+  <section class="admin-view" id="careers"><div class="section-title"><div><small>CAREER CRM</small><h2>Career applications</h2></div><span class="stock-pill"><span id="careerCount">0</span> applications</span></div><section class="admin-card table-card"><div class="table-scroll"><table><thead><tr><th>Applicant</th><th>Applying for</th><th>Role</th><th>Contact</th><th>Portfolio</th><th>Message</th><th>Applied on</th></tr></thead><tbody id="careerRows"></tbody></table></div></section></section>
+  <section class="admin-view" id="activity"><div class="section-title"><div><small>STORE ANALYTICS</small><h2>Website activity</h2></div></div><section class="admin-card"><div class="activity" id="activityRows"></div></section></section>
+  <section class="admin-view" id="settings"><div class="section-title"><div><small>STORE SETTINGS</small><h2>WhatsApp integration</h2></div></div><section class="admin-card settings-card"><p>Customer chat number: <strong>+91 97823 26637</strong>. WhatsApp OTP needs Meta Cloud API credentials.</p><form class="form-grid" id="whatsappSettings"><input name="number" inputmode="numeric" placeholder="ZLOON WhatsApp Business number"><button type="submit">Save WhatsApp number</button></form><p class="small" id="whatsappStatus"></p></section></section>
+</div>
+<section class="admin-access" id="accessDenied" hidden><div class="access-logo">ZLOON</div><h2>Admin login required</h2><p>Sign in from the ZLOON website using the Admin tab.</p><a href="index.html">Go to ZLOON login</a></section>
+</main></div><div class="admin-login-modal" id="adminLoginModal" hidden><form id="adminDirectLogin"><button class="admin-login-close" type="button" aria-label="Close">×</button><p class="eyebrow">ZLOON ADMIN</p><h2>Sign in to live data</h2><p>Login to view real orders, customer profiles and stock.</p><input name="email" type="email" placeholder="Admin email" required><input name="password" type="password" placeholder="Password" required><button type="submit">Open live dashboard</button><small id="adminLoginStatus"></small></form></div></div><script src="admin.js?v=20260847"></script><script src="copy-polish.js?v=20260846"></script></body></html>
