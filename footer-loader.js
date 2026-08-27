@@ -6,17 +6,6 @@
     typography.dataset.zloonTypography = 'true';
     document.head.appendChild(typography);
   }
-  if (!document.querySelector('link[data-zloon-experience]')) {
-    const css = document.createElement('link');
-    css.rel = 'stylesheet';
-    css.href = 'experience.css?v=20260855';
-    css.dataset.zloonExperience = 'true';
-    document.head.appendChild(css);
-    const script = document.createElement('script');
-    script.src = 'experience.js?v=20260856';
-    script.dataset.zloonExperience = 'true';
-    document.head.appendChild(script);
-  }
   if (!document.querySelector('link[data-zloon-footer]')) {
     const css = document.createElement('link');
     css.rel = 'stylesheet';
