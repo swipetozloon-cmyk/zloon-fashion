@@ -1,6 +1,6 @@
 /* ZLOON local server. Set ADMIN_PASSWORD and SESSION_SECRET before production. */
 const http=require('http'),https=require('https'),fs=require('fs'),path=require('path'),crypto=require('crypto');
-const ROOT=__dirname,DATA=path.join(ROOT,'data','zloon-data.json'),PORT=process.env.PORT||4173;
+const ROOT=__dirname,DATA=path.join(ROOT,'data','zloon-data.json'),PORT=process.env.PORT||3000
 const sessions=new Map();
 const hash=value=>crypto.scryptSync(value,'zloon-auth-salt',64).toString('hex');
 const random=bytes=>crypto.randomBytes(bytes).toString('hex');
