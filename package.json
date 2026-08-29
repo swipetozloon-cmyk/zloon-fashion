@@ -4,8 +4,9 @@
   "private": true,
   "description": "ZLOON fashion website with customer login and admin CRM",
   "scripts": {
-    "start": "node server.js"
-  },
+  "build": "node -e \"console.log('ZLOON build complete')\"",
+  "start": "node server.js"
+},
   "engines": {
     "node": ">=20"
   }
