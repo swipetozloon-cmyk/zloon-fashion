@@ -13,21 +13,43 @@ document.querySelectorAll('.checkout-payments label').forEach(label => label.add
   document.querySelectorAll('.checkout-payments label').forEach(item => item.classList.toggle('active', item === label));
 }));
 
-document.querySelector('#checkoutPageForm').addEventListener('submit', event => {
+async function createOrder(form) {
+  const response = await fetch('/api/orders', {
+    method: 'POST',
+    credentials: 'same-origin',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      items,
+      address: { line1: form.line1, city: form.city, pincode: form.pincode },
+      paymentMethod: form.paymentMethod === 'cod' ? 'cod' : 'whatsapp',
+      customer: { name: form.name, phone: form.phone, email: form.email }
+    })
+  });
+  const data = await response.json();
+  if (!response.ok) throw new Error(data.error || 'Unable to save your order.');
+  return data.order;
+}
+
+document.querySelector('#checkoutPageForm').addEventListener('submit', async event => {
   event.preventDefault();
   const status = document.querySelector('#checkoutPageStatus');
   const submit = event.currentTarget.querySelector('.place-order');
   if (!items.length) { status.textContent = 'Please add a product before checkout.'; return; }
+
   const form = Object.fromEntries(new FormData(event.currentTarget));
-  const orderId = `ZL-${Math.random().toString(16).slice(2, 10).toUpperCase()}`;
-  const order = { id: orderId, items, customer: form, total, createdAt: new Date().toISOString() };
-  const orders = JSON.parse(localStorage.getItem('zloon_orders') || '[]');
-  localStorage.setItem('zloon_orders', JSON.stringify([order, ...orders]));
-  sessionStorage.removeItem('zloon_buy_now');
-  if (!buyNowItems.length) localStorage.setItem('zloon_style_bag', '[]');
   submit.disabled = true;
-  status.innerHTML = '<strong>Order placed.</strong> Opening your confirmation page...';
-  const payment = form.paymentMethod === 'cod' ? 'Cash on Delivery' : 'Payment confirmation pending';
-  const params = new URLSearchParams({ order: orderId, name: form.name, payment });
-  setTimeout(() => { location.href = `order-success.html?${params}`; }, 350);
+  status.textContent = 'Saving your order...';
+
+  try {
+    const order = await createOrder(form);
+    sessionStorage.removeItem('zloon_buy_now');
+    if (!buyNowItems.length) localStorage.setItem('zloon_style_bag', '[]');
+    status.innerHTML = '<strong>Order placed.</strong> Opening your confirmation page...';
+    const payment = form.paymentMethod === 'cod' ? 'Cash on Delivery' : 'Payment confirmation pending';
+    const params = new URLSearchParams({ order: order.id, name: form.name, payment });
+    setTimeout(() => { location.href = `order-success.html?${params}`; }, 350);
+  } catch (error) {
+    submit.disabled = false;
+    status.textContent = error.message;
+  }
 });
