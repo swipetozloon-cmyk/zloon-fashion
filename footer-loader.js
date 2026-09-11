@@ -54,4 +54,10 @@
     tools.dataset.zloonTools = 'true';
     document.head.appendChild(tools);
   }
+  if (!document.querySelector('script[data-men-only]')) {
+    const menOnly = document.createElement('script');
+    menOnly.src = 'men-only.js?v=20260910';
+    menOnly.dataset.menOnly = 'true';
+    document.head.appendChild(menOnly);
+  }
 })();

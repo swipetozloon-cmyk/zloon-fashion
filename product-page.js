@@ -1,3 +1,6 @@
+const menOnlyScript = document.createElement('script');
+menOnlyScript.src = 'men-only.js?v=20260910';
+document.head.appendChild(menOnlyScript);
 for (const href of ['product-layout-extra.css', 'product-trust-cart.css', 'product-quantity.css']) {
   const css = document.createElement('link');
   css.rel = 'stylesheet';

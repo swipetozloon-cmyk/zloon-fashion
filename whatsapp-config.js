@@ -1,1 +1,1 @@
-document.addEventListener('DOMContentLoaded',()=>{const applyNumber=()=>{if(typeof setWhatsapp==='function')setWhatsapp('919782326637')};applyNumber();setTimeout(applyNumber,900)});
+document.addEventListener('DOMContentLoaded',()=>{const applyNumber=()=>{if(typeof setWhatsapp==='function')setWhatsapp('919950950123');document.querySelectorAll('a[href*="wa.me/"]').forEach(link=>link.href=link.href.replace(/wa\.me\/\d+/,'wa.me/919950950123'))};applyNumber();setTimeout(applyNumber,900)});
