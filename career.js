@@ -20,7 +20,6 @@ careerForm?.addEventListener('submit', async event => {
 
   careerStatus.textContent = 'Application submitted. Opening WhatsApp to share it with the ZLOON team.';
   const message = `Hello ZLOON Team, I have submitted a career application.\n\nName: ${application.name}\nApplying for: ${application.type}\nRole: ${application.role}\nCity: ${application.city}\nEmail: ${application.email}\nPhone: ${application.phone}\n\nPortfolio: ${application.portfolio || 'Not added'}\n\nMessage: ${application.message}`;
-  setTimeout(() => window.open(`https://wa.me/919950950123?text=${encodeURIComponent(message)}`, '_blank', 'noopener'), 350);
+  setTimeout(() => window.open(`https://wa.me/919784203355?text=${encodeURIComponent(message)}`, '_blank', 'noopener'), 350);
   careerForm.reset();
 });
-
