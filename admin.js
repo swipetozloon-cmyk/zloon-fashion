@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const whatsappForm = document.querySelector('#whatsappSettings');
     const whatsappStatus = document.querySelector('#whatsappStatus');
-    whatsappForm.number.value = config.whatsappNumber || '919950950123';
+    whatsappForm.number.value = config.whatsappNumber || '919784203355';
     whatsappStatus.textContent = 'Customer WhatsApp link is active.';
     whatsappForm.onsubmit = async event => {
       event.preventDefault();
@@ -167,4 +167,3 @@ document.addEventListener('DOMContentLoaded', async () => {
     renderCareerApplications(localApplications);
   }
 });
-
